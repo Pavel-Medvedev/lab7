@@ -7,7 +7,9 @@ from django.contrib.auth.models import User
 def archive(request):
     if request.user.is_authenticated:
         links_list = [
-            {"text":"Выход из аккаунта", "ref":"logout/"}, {"text":"Создать статью", "ref":"article/new/"}
+            {"0": 'Здравствуй, ' + request.user.username},
+            {"text":"Выход из аккаунта", "ref":"logout/"}, 
+            {"text":"Создать статью", "ref":"article/new/"}
         ]
     else:
         links_list = [
